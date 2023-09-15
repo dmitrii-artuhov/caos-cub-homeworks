@@ -34,7 +34,8 @@ char **strsplit(char **string, const char *delim) {
     char *token;
     size_t cnt = strcnt(*string, delim);
 
-    char **splitv = calloc(cnt + 1, sizeof(char));
+    // char **splitv = calloc(cnt + 1, sizeof(char));
+    char **splitv = calloc(cnt + 2, sizeof(char*));
     if (splitv) {
         for (int i = 0; (token = strsep(string, delim)); i++) {
             splitv[i] = token;
@@ -54,5 +55,11 @@ int main(int argc, char *argv[]) {
         }
     }
 
+
     return EXIT_SUCCESS;
 }
+
+/*
+Solution: we must change the line inside `strsplit` function.
+We need to allocate (cnt + 2) pointers with the sizze of `char*` each
+*/
