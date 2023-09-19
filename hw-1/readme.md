@@ -35,4 +35,4 @@ So it should be like this: `char **splitv = calloc(cnt + 2, sizeof(char*));`
 
 ### Task 3:
 
-See the zip-archive.
+See the `3.c` file. Build it with `make` command and then run with `./make-build/env [args]`
