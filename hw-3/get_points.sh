@@ -4,7 +4,7 @@ num_threads=$(( $(nproc) * 2))
 execution_times=()
 
 for ((i=1; i<=num_threads; i++)); do
-    command="/usr/bin/time -f \"%e\" ./make-build/perfect -q -s 1 -e 1000000 -t $i"
+    command="/usr/bin/time -f \"%e\" ./make-build/perfect -q -s 1 -e 500000 -t $i"
     execution_time=$($command 2>&1)
 
     # removing quotes

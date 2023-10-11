@@ -82,12 +82,16 @@ context ctx = {
     .thread_count = 1
 };
 
+static pthread_mutex_t printf_mutex;
+
 void *threadfun(void *args) {
     thread_data data = *((thread_data *)args);
     
     for (uint64_t i = data.left; i < data.right; ++i) {
         if (is_perfect(i) && ctx.verbose != -1) {
+            pthread_mutex_lock(&printf_mutex);
             printf("%ld\n", i);
+            pthread_mutex_unlock(&printf_mutex);
         }
     }
 
@@ -97,6 +101,7 @@ void *threadfun(void *args) {
 int main(int argc, char *argv[]) {
     int opt;
     program_name = argv[0];
+    pthread_mutex_init(&printf_mutex, NULL);
 
     while ((opt = getopt(argc, argv, "s:e:t:vq")) != -1) {
         switch (opt) {
