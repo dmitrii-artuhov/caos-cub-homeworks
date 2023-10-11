@@ -262,39 +262,6 @@ int main(int argc, char *argv[]) {
     
     // init 
     linked_list_init(&list);
-
-    // node_data d1 = {
-    //     .id = 0,
-    //     .type = 't'
-    // };
-    // node_data d2 = {
-    //     .id = 1,
-    //     .type = 't'
-    // };
-    // node_data d3 = {
-    //     .id = 0,
-    //     .type = 'd'
-    // };
-    // node_data d4 = {
-    //     .id = 1,
-    //     .type = 'd'
-    // };
-    // node_data d5 = {
-    //     .id = 100,
-    //     .type = 'd'
-    // };
-
-    // linked_list_add_front(&list, d1);
-    // linked_list_add_front(&list, d2);
-    // linked_list_add_front(&list, d3);
-    // linked_list_add_front(&list, d4);
-    // linked_list_add_front(&list, d5);
-
-    // char buffer[30 + 1] = {0};
-    // linked_list_get_nodes_as_string(&list, buffer, 30);
-    // printf("%s\n", buffer);
-
-    // return 0;
     
     pthread_mutex_init(&mutex, NULL);
     pthread_cond_init(&tcv, NULL);
