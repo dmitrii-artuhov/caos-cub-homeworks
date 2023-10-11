@@ -1,7 +1,7 @@
 CC = gcc
-CFLAGS = -g -Wall -Wextra -fsanitize=address -fsanitize=leak
+CFLAGS = -Wall -Wextra -fsanitize=address -fsanitize=leak # -DDEBUG
 
-SRC = 1.c circular_buffer.c circular_buffer.h
+SRC = 1.c circular_buffer.h linked_list.h
 BUILD_DIR = make-build
 EXEC = $(BUILD_DIR)/taxi
 
